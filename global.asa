@@ -1,0 +1,15 @@
+<SCRIPT LANGUAGE=VBScript RUNAT=Server> 
+Sub Application_onStart 
+Application("num") = 0 
+End Sub 
+Sub Session_onStart 
+Application.Lock 
+Application("num") = Application("num") + 1 
+Application.Unlock 
+End Sub 
+Sub session_onEnd
+Application.Lock
+Application("num") =Application("num") -1
+Application.Unlock
+End Sub
+</script>
